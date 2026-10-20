@@ -1,0 +1,45 @@
+{
+  "gpu": "NVIDIA GB200",
+  "gpu_memory_mib": 189471,
+  "driver": "580.196",
+  "cpu_architecture": "aarch64",
+  "ep_size": 8,
+  "tp_size": 1,
+  "flashinfer_commit": "35a10560da05517ceb5472ba90c88d53f9129a40",
+  "torch": "2.13.0+cu132",
+  "cuda": "13.2",
+  "nccl_runtime": 23007,
+  "torch_nccl_build": [
+    2,
+    29,
+    7
+  ],
+  "cutlass_dsl": "4.7.1",
+  "nccl_extensions": "0.1.0",
+  "nccl4py": "0.5.0",
+  "nvshmem": "3.4.5",
+  "nvshmem4py": "0.4.1",
+  "route_weight_stage": {
+    "mega": "SwiGLU output before FC2",
+    "split_trtllm": "after FC2",
+    "split_cute_bf16": "SwiGLU output before FC2"
+  },
+  "split_adapter": {
+    "stock": "zero-weight non-local picks still cost compute; duplicate IDs can drop real routes",
+    "skip_nonlocal": "non-local IDs set to -1 by benchmark wrapper; wrapper cost included"
+  },
+  "measurement": {
+    "mode": "CUDA graph",
+    "warmup": 5,
+    "samples": 30,
+    "forwards_per_sample": 10,
+    "rank_reduction": "maximum latency per sample"
+  },
+  "benchmark_sha256": "20694dfd33f23428c79a618308dd032007f5e313d46330a243d10c92dc6ac1e9",
+  "routing_override_sha256": "b4a99deda0ccde9f2fd40187c8284ba391aabbc58d3320c25356b30ea23fcd41",
+  "hardware": "8x NVIDIA GB200",
+  "benchmark_sha256_note": "Measured harness hash; the shareable harness only omits the local import path from output metadata.",
+  "shareable_harness_sha256": "2dd0687e16e945fd3d3a1a59aa109d2abfbac410bc3265e8f93b65d7f70b102a",
+  "cute_bf16_adapter_sha256": "8ac736f1e312ddff2f3a4af7e850f9228a94fac199c143346b25aef916cdb75f",
+  "cute_bf16_adapter": "Experimental SM100 BF16 fused FC1+FC2; GPU sort, padded gather, counter reset, FP32 scatter sum included"
+}

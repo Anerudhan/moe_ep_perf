@@ -1,0 +1,10 @@
+__pycache__/
+venv-*/
+venv/
+flashinfer/
+cache/
+setup-*.log
+results/**/*.log
+results/**/environment.txt
+results.jsonl
+!results/**/results.jsonl
